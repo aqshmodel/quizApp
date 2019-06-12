@@ -147,10 +147,10 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CgL-ys-Zvr">
-                                <rect key="frame" x="147" y="508" width="120" height="29"/>
+                                <rect key="frame" x="107" y="508" width="200" height="29"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" placeholder="YES" id="POf-ef-rfV"/>
+                                    <constraint firstAttribute="width" constant="200" id="Xur-A6-egW"/>
                                 </constraints>
                                 <segments>
                                     <segment title="✕"/>
@@ -158,11 +158,11 @@
                                 </segments>
                                 <color key="tintColor" red="1" green="0.17815667199999999" blue="0.1066326121" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLI-Fl-QIt">
-                                <rect key="frame" x="132" y="54" width="150" height="36"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLI-Fl-QIt">
+                                <rect key="frame" x="82" y="54" width="250" height="36"/>
                                 <color key="backgroundColor" red="0.01198059651" green="0.1001299574" blue="0.6391431689" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" placeholder="YES" id="oXB-f9-YOf"/>
+                                    <constraint firstAttribute="width" constant="250" id="6nB-JP-m5b"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <size key="titleShadowOffset" width="0.0" height="1"/>
@@ -175,10 +175,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgk-TI-AJx">
-                                <rect key="frame" x="107" y="576" width="200" height="36"/>
+                                <rect key="frame" x="82" y="576" width="250" height="36"/>
                                 <color key="backgroundColor" red="0.01198059651" green="0.1001299574" blue="0.6391431689" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" placeholder="YES" id="bZC-4i-KbQ"/>
+                                    <constraint firstAttribute="width" constant="250" id="W5R-9K-C2F"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <size key="titleShadowOffset" width="0.0" height="1"/>
@@ -194,7 +194,7 @@
                                 <rect key="frame" x="82" y="796" width="250" height="36"/>
                                 <color key="backgroundColor" red="0.01198059651" green="0.1001299574" blue="0.6391431689" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" placeholder="YES" id="pJo-YP-IBJ"/>
+                                    <constraint firstAttribute="width" constant="250" id="nHU-pQ-sv2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <size key="titleShadowOffset" width="0.0" height="1"/>
