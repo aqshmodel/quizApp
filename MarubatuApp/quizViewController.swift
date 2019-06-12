@@ -13,6 +13,8 @@ class quizViewController: UIViewController, UITextFieldDelegate {
 
     
     
+    @IBAction func keyHide(_ sender: UITextField) {
+    }
     @IBOutlet weak var addBgImage: UIImageView! //背景のview
     @IBOutlet weak var quizField: UITextField! //問題を登録するテキストフィールド
     
