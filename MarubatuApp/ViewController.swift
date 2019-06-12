@@ -125,8 +125,8 @@ class ViewController: UIViewController {
     
             // アニメーションの適用
             fullImage.animationImages = imageArray
-            // アニメーションの長さ:3秒
-            fullImage.animationDuration = 3
+            // アニメーションの長さ:2秒
+            fullImage.animationDuration = 2
             // アニメーション再生回数:1回
             fullImage.animationRepeatCount = 1
             // アニメーションを開始

@@ -77,8 +77,8 @@
                                     <constraint firstAttribute="width" constant="320" id="CyX-UB-fco"/>
                                 </constraints>
                             </imageView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N E X T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wy-UW-QWe">
-                                <rect key="frame" x="0.0" y="264" width="129.5" height="50"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="N E X T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wy-UW-QWe">
+                                <rect key="frame" x="0.0" y="265" width="129.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Qe0-gG-UCZ"/>
                                 </constraints>
@@ -150,7 +150,7 @@
                                 <rect key="frame" x="147" y="508" width="120" height="29"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="POf-ef-rfV"/>
+                                    <constraint firstAttribute="width" constant="120" placeholder="YES" id="POf-ef-rfV"/>
                                 </constraints>
                                 <segments>
                                     <segment title="✕"/>
@@ -162,7 +162,7 @@
                                 <rect key="frame" x="132" y="54" width="150" height="36"/>
                                 <color key="backgroundColor" red="0.01198059651" green="0.1001299574" blue="0.6391431689" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="oXB-f9-YOf"/>
+                                    <constraint firstAttribute="width" constant="150" placeholder="YES" id="oXB-f9-YOf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <size key="titleShadowOffset" width="0.0" height="1"/>
@@ -178,7 +178,7 @@
                                 <rect key="frame" x="107" y="576" width="200" height="36"/>
                                 <color key="backgroundColor" red="0.01198059651" green="0.1001299574" blue="0.6391431689" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="bZC-4i-KbQ"/>
+                                    <constraint firstAttribute="width" constant="200" placeholder="YES" id="bZC-4i-KbQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <size key="titleShadowOffset" width="0.0" height="1"/>
@@ -194,7 +194,7 @@
                                 <rect key="frame" x="82" y="796" width="250" height="36"/>
                                 <color key="backgroundColor" red="0.01198059651" green="0.1001299574" blue="0.6391431689" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="pJo-YP-IBJ"/>
+                                    <constraint firstAttribute="width" constant="250" placeholder="YES" id="pJo-YP-IBJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <size key="titleShadowOffset" width="0.0" height="1"/>
