@@ -12,7 +12,9 @@ import AVFoundation
 class quizViewController: UIViewController, UITextFieldDelegate {
 
     
-    @IBOutlet weak var quizField: UITextField!
+    
+    @IBOutlet weak var addBgImage: UIImageView! //背景のview
+    @IBOutlet weak var quizField: UITextField! //問題を登録するテキストフィールド
     
     @IBOutlet weak var anserButton: UISegmentedControl!
     // 音を出すための再生オブジェクトを格納
@@ -21,9 +23,11 @@ class quizViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addBgImage.image = UIImage(named: "addbg")
         quizField.delegate = self  //テキストフィールドのdelegate
         self.setupSound(name: "quiz")
         self.resultAudioPlayer.play()
+        self.resultAudioPlayer.numberOfLoops = -1 //無限ループ再生 少しラグがあるのを解消できるか？
     }
     
     // Topに戻るボタンの動作
@@ -33,6 +37,7 @@ class quizViewController: UIViewController, UITextFieldDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
+    // 問題を保存するボタンの動作
     @IBAction func toSaveButton(_ sender: UIButton) {
         
         //○かXかどちらを選択したか判別する変数のインスタンスを生成

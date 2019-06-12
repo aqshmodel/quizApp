@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.setupSound(name: "setting")
         self.resultAudioPlayer.play()
+        self.resultAudioPlayer.numberOfLoops = -1 //無限ループ再生
         while let okImage = UIImage(named: "full\(imageArray.count+1)") {
             imageArray.append(okImage)
         }
@@ -37,6 +38,7 @@ class ViewController: UIViewController {
         quizes = []
         self.setupSound(name: "setting")
         self.resultAudioPlayer.play()
+        self.resultAudioPlayer.numberOfLoops = -1 //無限ループ再生
         if userDefaults.object(forKey: "quiz") != nil {
             quizes = userDefaults.object(forKey: "quiz") as! [[String: Any]]
         }
@@ -103,7 +105,7 @@ class ViewController: UIViewController {
         // 隠していたLabel(NEXTの文字)を表示
         self.nextLabel.isHidden = false
         self.nextLabelMargin.constant += 420
-        UIImageView.animate(withDuration: 2.0, animations: {
+        UIImageView.animate(withDuration: 1.7, animations: {
             self.view.layoutIfNeeded()
         },completion: { (finished: Bool) in
             self.nextLabel.isHidden = true
@@ -154,11 +156,13 @@ class ViewController: UIViewController {
     
     @IBAction func tapNoButton(_ sender: Any) {
         guard userDefaults.object(forKey: "quiz") != nil  else {return}
+        guard  self.nextLabelMargin.constant == 0 else {return}
         checkAnswer(yourAnswer: false)
     }
     
     @IBAction func tapYesButton(_ sender: Any) {
         guard userDefaults.object(forKey: "quiz") != nil  else {return}
+        guard  self.nextLabelMargin.constant == 0 else {return}
         checkAnswer(yourAnswer: true)
     }
     
