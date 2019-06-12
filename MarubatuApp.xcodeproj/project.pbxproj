@@ -12,6 +12,8 @@
 		6D1D8CC622AB4DC300356497 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D8CC422AB4DC300356497 /* Main.storyboard */; };
 		6D1D8CC822AB4DC500356497 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D8CC722AB4DC500356497 /* Assets.xcassets */; };
 		6D1D8CCB22AB4DC500356497 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D8CC922AB4DC500356497 /* LaunchScreen.storyboard */; };
+		6D937EAB22B07BF600D73BE5 /* quiz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6D937EA922B07BF600D73BE5 /* quiz.mp3 */; };
+		6D937EAC22B07BF600D73BE5 /* setting.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6D937EAA22B07BF600D73BE5 /* setting.mp3 */; };
 		6DAD65A922AFDBD7001A5904 /* quizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAD65A822AFDBD7001A5904 /* quizViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,8 @@
 		6D1D8CC722AB4DC500356497 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D1D8CCA22AB4DC500356497 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D1D8CCC22AB4DC500356497 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D937EA922B07BF600D73BE5 /* quiz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = quiz.mp3; sourceTree = "<group>"; };
+		6D937EAA22B07BF600D73BE5 /* setting.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = setting.mp3; sourceTree = "<group>"; };
 		6DAD65A822AFDBD7001A5904 /* quizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quizViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +60,7 @@
 		6D1D8CBF22AB4DC300356497 /* MarubatuApp */ = {
 			isa = PBXGroup;
 			children = (
+				6D937EA822B07BF600D73BE5 /* quizsound */,
 				6D1D8CC022AB4DC300356497 /* AppDelegate.swift */,
 				6D1D8CC222AB4DC300356497 /* ViewController.swift */,
 				6DAD65A822AFDBD7001A5904 /* quizViewController.swift */,
@@ -65,6 +70,15 @@
 				6D1D8CCC22AB4DC500356497 /* Info.plist */,
 			);
 			path = MarubatuApp;
+			sourceTree = "<group>";
+		};
+		6D937EA822B07BF600D73BE5 /* quizsound */ = {
+			isa = PBXGroup;
+			children = (
+				6D937EA922B07BF600D73BE5 /* quiz.mp3 */,
+				6D937EAA22B07BF600D73BE5 /* setting.mp3 */,
+			);
+			path = quizsound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +142,8 @@
 				6D1D8CCB22AB4DC500356497 /* LaunchScreen.storyboard in Resources */,
 				6D1D8CC822AB4DC500356497 /* Assets.xcassets in Resources */,
 				6D1D8CC622AB4DC300356497 /* Main.storyboard in Resources */,
+				6D937EAC22B07BF600D73BE5 /* setting.mp3 in Resources */,
+				6D937EAB22B07BF600D73BE5 /* quiz.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

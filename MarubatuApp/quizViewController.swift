@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class quizViewController: UIViewController, UITextFieldDelegate {
 
@@ -14,17 +15,21 @@ class quizViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var quizField: UITextField!
     
     @IBOutlet weak var anserButton: UISegmentedControl!
-    
+    // 音を出すための再生オブジェクトを格納
+    var resultAudioPlayer: AVAudioPlayer = AVAudioPlayer()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         quizField.delegate = self  //テキストフィールドのdelegate
+        self.setupSound(name: "quiz")
+        self.resultAudioPlayer.play()
     }
     
     // Topに戻るボタンの動作
     @IBAction func toTopButton(_ sender: UIButton) {
-        // 前の画面に戻る処理
+        // 前の画面に戻る処理  音楽ストップ
+        self.resultAudioPlayer.stop()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -88,6 +93,16 @@ class quizViewController: UIViewController, UITextFieldDelegate {
         let close = UIAlertAction(title: "とじる", style: .cancel , handler: nil)
         alert.addAction(close)
         present(alert, animated: true, completion: nil)
+    }
+    //音の再生準備
+    func setupSound(name: String) {
+        // ファイルがあるかどうかを確認するif
+        if let sound = Bundle.main.path(forResource: name, ofType: ".mp3")
+        {
+            // try! で例外処理をスキップ
+            resultAudioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound))
+            resultAudioPlayer.prepareToPlay()
+        }
     }
 
 }

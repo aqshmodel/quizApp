@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
-
+    
+    // 音を出すための再生オブジェクトを格納
+    var resultAudioPlayer: AVAudioPlayer = AVAudioPlayer()
     var currentQuestionNum:Int = 0
     var collectA = 0
     var quizes: [[String: Any]] = []
@@ -18,9 +21,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupSound(name: "setting")
+        self.resultAudioPlayer.play()
         while let okImage = UIImage(named: "full\(imageArray.count+1)") {
             imageArray.append(okImage)
         }
+        bgImage.image = UIImage(named: "quizbg")
+
         // Do any additional setup after loading the view.
         showQuestion()
     }
@@ -28,7 +35,8 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         // 画面遷移で戻ったときにquizesに入っている配列を一旦初期化し、アプリ内データから読み込む
         quizes = []
-        
+        self.setupSound(name: "setting")
+        self.resultAudioPlayer.play()
         if userDefaults.object(forKey: "quiz") != nil {
             quizes = userDefaults.object(forKey: "quiz") as! [[String: Any]]
         }
@@ -38,8 +46,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
     
-    
-   
 //        // 辞書の定義 キー値: 中身
 //        [
 //            "question": "iPhoneアプリを開発する統合環境はZcodeである",
@@ -94,6 +100,15 @@ class ViewController: UIViewController {
             return
         }
         currentQuestionNum += 1
+        // 隠していたLabel(NEXTの文字)を表示
+        self.nextLabel.isHidden = false
+        self.nextLabelMargin.constant += 420
+        UIImageView.animate(withDuration: 2.0, animations: {
+            self.view.layoutIfNeeded()
+        },completion: { (finished: Bool) in
+            self.nextLabel.isHidden = true
+            self.nextLabelMargin.constant = 0
+            })
         // 問題が入っている配列の数で判別し、最後の問題に到達したら最初の問題に戻る簡易処理
         if currentQuestionNum >= quizes.count {
             currentQuestionNum = 0
@@ -108,13 +123,13 @@ class ViewController: UIViewController {
     
             // アニメーションの適用
             fullImage.animationImages = imageArray
-            // アニメーションの長さ:2秒
-            fullImage.animationDuration = 5
+            // アニメーションの長さ:3秒
+            fullImage.animationDuration = 3
             // アニメーション再生回数:1回
             fullImage.animationRepeatCount = 1
             // アニメーションを開始
             fullImage.startAnimating()
-    
+        
     }
     
     // アラートを出す関数を定義    型としてこれを書く
@@ -128,8 +143,14 @@ class ViewController: UIViewController {
     }
     
     
-    
-    @IBOutlet weak var fullImage: UIImageView!
+    @IBAction func toAddQuiz(_ sender: UIButton) {
+        // 問題を作成するというボタンを押した時に音楽ストップ
+        self.resultAudioPlayer.stop()
+    }
+    @IBOutlet weak var nextLabelMargin: NSLayoutConstraint! //NEXTの文字のマージン
+    @IBOutlet weak var nextLabel: UILabel! //NEXTという文字を表示させる
+    @IBOutlet weak var bgImage: UIImageView! //背景のview
+    @IBOutlet weak var fullImage: UIImageView! //アニメーションさせる為のView
     
     @IBAction func tapNoButton(_ sender: Any) {
         guard userDefaults.object(forKey: "quiz") != nil  else {return}
@@ -141,6 +162,16 @@ class ViewController: UIViewController {
         checkAnswer(yourAnswer: true)
     }
     
+    //音の再生準備
+    func setupSound(name: String) {
+        // ファイルがあるかどうかを確認するif
+        if let sound = Bundle.main.path(forResource: name, ofType: ".mp3")
+        {
+            // try! で例外処理をスキップ
+            resultAudioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound))
+            resultAudioPlayer.prepareToPlay()
+        }
+    }
     
 }
 
